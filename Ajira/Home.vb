@@ -1,21 +1,34 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports System.IO
+Imports BCrypt.Net
+
 Public Class Home
+    Private usertype As String
+
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        pn_registration.Visible = True
-        Guna2Transition1.HideSync(pn_registration)
+        pn_login.Visible = True
+        Guna2Transition1.ShowSync(pn_login)
     End Sub
+
     Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
-        pn_registration.Visible = True
-        Guna2Transition1.ShowSync(pn_registration)
+        pn_login.Visible = True
+        Guna2Transition1.HideSync(pn_login)
     End Sub
 
     Private Sub BtncreateaccButton_Click(sender As Object, e As EventArgs) Handles btncreateaccButton.Click
+        If rdoEmployee.Checked Then
+            usertype = "employee"
+        ElseIf rdoEmployer.Checked Then
+            usertype = "employer"
+        Else
+            MessageBox.Show("Please select a user type.")
+            Exit Sub
+        End If
+
         ' Check if any of the textboxes are blank
         If String.IsNullOrWhiteSpace(txtfirstname.Text) OrElse
-       String.IsNullOrWhiteSpace(txtsecondname.Text) OrElse
-       String.IsNullOrWhiteSpace(txtuname.Text) OrElse
-       String.IsNullOrWhiteSpace(txtpass.Text) Then
+           String.IsNullOrWhiteSpace(txtsecondname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtuname.Text) OrElse
+           String.IsNullOrWhiteSpace(txtpass.Text) Then
 
             MessageBox.Show("Please fill in all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -28,6 +41,9 @@ Public Class Home
             MessageBox.Show("Password must be 6-12 characters long and include at least one letter, one number, and one special character.", "Password Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
+
+        ' Hash the password before storing it
+        Dim hashedPassword As String = BCrypt.Net.BCrypt.HashPassword(password)
 
         ' If all fields are filled and password is valid, proceed with registration
         Try
@@ -48,13 +64,13 @@ Public Class Home
                 End Using
 
                 ' Insert the new registration record
-                Dim query As String = "INSERT INTO registration (firstname, secondname, username, password) VALUES (@firstname, @secondname, @username, @password)"
+                Dim query As String = "INSERT INTO registration (firstname, secondname, username, password, user_type) VALUES (@firstname, @secondname, @username, @password, @user_type)"
                 Using cm As New MySqlCommand(query, connection)
                     cm.Parameters.AddWithValue("@firstname", txtfirstname.Text)
                     cm.Parameters.AddWithValue("@secondname", txtsecondname.Text)
                     cm.Parameters.AddWithValue("@username", txtuname.Text)
-                    cm.Parameters.AddWithValue("@password", txtpass.Text)
-
+                    cm.Parameters.AddWithValue("@password", hashedPassword) ' Corrected to use hashedPassword
+                    cm.Parameters.AddWithValue("@user_type", usertype)
                     connection.Open()
                     cm.ExecuteNonQuery()
 
@@ -72,7 +88,6 @@ Public Class Home
         End Try
     End Sub
 
-
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
         ' Check if any textbox is empty
         If String.IsNullOrWhiteSpace(txtunamelogin.Text) Then
@@ -81,6 +96,12 @@ Public Class Home
         End If
         If String.IsNullOrWhiteSpace(txtpasslogin.Text) Then
             MessageBox.Show("Password cannot be empty.", "Login Error")
+            Return
+        End If
+
+        ' Check if any radio button is selected
+        If Not radioEmployee.Checked And Not radioEmployer.Checked Then
+            MessageBox.Show("Please select either Employee or Employer.", "Login Error")
             Return
         End If
 
@@ -93,32 +114,39 @@ Public Class Home
                 Mysqlcon.Open()
 
                 ' Use parameterized query to prevent SQL injection
-                Dim query As String = "SELECT * FROM registration WHERE username = @username AND password = @password"
+                Dim query As String = "SELECT password, user_type FROM registration WHERE username = @username"
                 Using command As New MySqlCommand(query, Mysqlcon)
                     command.Parameters.AddWithValue("@username", txtunamelogin.Text)
-                    command.Parameters.AddWithValue("@password", txtpasslogin.Text)
 
                     ' Execute the query
                     reader = command.ExecuteReader()
 
-                    Dim count As Integer = 0
-                    While reader.Read()
-                        count += 1
-                    End While
+                    If reader.Read() Then
+                        Dim storedHash As String = reader("password").ToString()
+                        Dim userType As String = reader("user_type").ToString()
 
-                    ' Check the result
-                    If count = 1 Then
-                        MessageBox.Show("Login successful!", "Welcome")
-                        ' Clear the textboxes after successful login
-                        txtunamelogin.Clear()
-                        txtpasslogin.Clear()
+                        ' Verify the password
+                        If BCrypt.Net.BCrypt.Verify(txtpasslogin.Text, storedHash) Then
+                            ' Check user type and selection
+                            If (radioEmployee.Checked And userType = "employee") Or (radioEmployer.Checked And userType = "employer") Then
+                                MessageBox.Show("Login successful!", "Welcome")
+                                ' Clear the textboxes after successful login
+                                txtunamelogin.Clear()
+                                txtpasslogin.Clear()
+                                Me.Hide() ' Hide the login form
 
-                        Dim dashboard As New Dashboard
-                        dashboard.Show()
-                        Me.Hide() ' Hide the login form
-                        MessageBox.Show("Update Profle", "Update Profile to Continue")
-                    ElseIf count > 1 Then
-                        MessageBox.Show("Duplicate usernames found, please contact administrator.", "Login Error")
+                                ' Open the appropriate dashboard
+                                If userType = "employee" Then
+                                    employeeDash.Show()
+                                ElseIf userType = "employer" Then
+                                    employerdash.Show()
+                                End If
+                            Else
+                                MessageBox.Show("Please check your selection. Your user type does not match.", "Login Error")
+                            End If
+                        Else
+                            MessageBox.Show("Invalid username or password.", "Login Error")
+                        End If
                     Else
                         MessageBox.Show("Invalid username or password.", "Login Error")
                     End If
@@ -131,8 +159,10 @@ Public Class Home
         End Using
     End Sub
 
-    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles ToggleSwitch1.CheckedChanged
 
+
+    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles ToggleSwitch1.CheckedChanged
+        ' Add any necessary code for the toggle switch
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles passwordreset.Click
@@ -140,4 +170,3 @@ Public Class Home
         passwordreset.Show()
     End Sub
 End Class
-

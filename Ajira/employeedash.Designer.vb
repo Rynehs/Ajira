@@ -1,7 +1,7 @@
 ﻿
 Imports MySql.Data.MySqlClient
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class dashboard
+Partial Class employeeDash
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -35,19 +35,19 @@ Partial Class dashboard
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.home = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.profile = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2ShadowPanel5 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.mainPanel = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.panelhome = New System.Windows.Forms.Panel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.ShadowPanel1.SuspendLayout()
-        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mainPanel.SuspendLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,8 +87,8 @@ Partial Class dashboard
         'ShadowPanel1
         '
         Me.ShadowPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.ShadowPanel1.Controls.Add(Me.home)
         Me.ShadowPanel1.Controls.Add(Me.profile)
-        Me.ShadowPanel1.Controls.Add(Me.Guna2GradientButton1)
         Me.ShadowPanel1.FillColor = System.Drawing.Color.White
         Me.ShadowPanel1.Location = New System.Drawing.Point(12, 146)
         Me.ShadowPanel1.Name = "ShadowPanel1"
@@ -96,6 +96,27 @@ Partial Class dashboard
         Me.ShadowPanel1.ShadowColor = System.Drawing.Color.Green
         Me.ShadowPanel1.Size = New System.Drawing.Size(184, 431)
         Me.ShadowPanel1.TabIndex = 0
+        '
+        'home
+        '
+        Me.home.Animated = True
+        Me.home.AutoRoundedCorners = True
+        Me.home.BorderRadius = 22
+        Me.home.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.home.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.home.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.home.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.home.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.home.FillColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.home.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.home.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.home.ForeColor = System.Drawing.Color.White
+        Me.home.Location = New System.Drawing.Point(13, 22)
+        Me.home.Name = "home"
+        Me.home.Size = New System.Drawing.Size(158, 46)
+        Me.home.TabIndex = 1
+        Me.home.Text = "Home"
+        Me.home.UseTransparentBackground = True
         '
         'profile
         '
@@ -109,58 +130,21 @@ Partial Class dashboard
         Me.profile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.profile.FillColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.profile.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.profile.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.profile.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.profile.ForeColor = System.Drawing.Color.White
-        Me.profile.Location = New System.Drawing.Point(13, 76)
+        Me.profile.Location = New System.Drawing.Point(13, 74)
         Me.profile.Name = "profile"
         Me.profile.Size = New System.Drawing.Size(158, 46)
-        Me.profile.TabIndex = 1
+        Me.profile.TabIndex = 0
         Me.profile.Text = "Profile"
         Me.profile.UseTransparentBackground = True
-        '
-        'Guna2GradientButton1
-        '
-        Me.Guna2GradientButton1.Animated = True
-        Me.Guna2GradientButton1.AutoRoundedCorners = True
-        Me.Guna2GradientButton1.BorderRadius = 22
-        Me.Guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.Guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.Guna2GradientButton1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GradientButton1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GradientButton1.Location = New System.Drawing.Point(13, 24)
-        Me.Guna2GradientButton1.Name = "Guna2GradientButton1"
-        Me.Guna2GradientButton1.Size = New System.Drawing.Size(158, 46)
-        Me.Guna2GradientButton1.TabIndex = 0
-        Me.Guna2GradientButton1.Text = "Home"
-        Me.Guna2GradientButton1.UseTransparentBackground = True
-        '
-        'Guna2CirclePictureBox2
-        '
-        Me.Guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Guna2CirclePictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox2.ImageRotate = 0!
-        Me.Guna2CirclePictureBox2.InitialImage = Nothing
-        Me.Guna2CirclePictureBox2.Location = New System.Drawing.Point(897, 28)
-        Me.Guna2CirclePictureBox2.Name = "Guna2CirclePictureBox2"
-        Me.Guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox2.Size = New System.Drawing.Size(110, 107)
-        Me.Guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.Guna2CirclePictureBox2.TabIndex = 3
-        Me.Guna2CirclePictureBox2.TabStop = False
         '
         'Guna2ShadowPanel5
         '
         Me.Guna2ShadowPanel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2ShadowPanel5.FillColor = System.Drawing.Color.White
-        Me.Guna2ShadowPanel5.Location = New System.Drawing.Point(897, 149)
+        Me.Guna2ShadowPanel5.Location = New System.Drawing.Point(923, 149)
         Me.Guna2ShadowPanel5.Name = "Guna2ShadowPanel5"
         Me.Guna2ShadowPanel5.Radius = 15
         Me.Guna2ShadowPanel5.ShadowColor = System.Drawing.Color.Green
@@ -190,19 +174,28 @@ Partial Class dashboard
         '
         'mainPanel
         '
+        Me.mainPanel.Controls.Add(Me.Guna2CirclePictureBox1)
         Me.mainPanel.Controls.Add(Me.panelhome)
         Me.mainPanel.Controls.Add(Me.Guna2PictureBox1)
         Me.mainPanel.Controls.Add(Me.Guna2ControlBox2)
         Me.mainPanel.Controls.Add(Me.Guna2ControlBox1)
         Me.mainPanel.Controls.Add(Me.Guna2ShadowPanel5)
-        Me.mainPanel.Controls.Add(Me.Guna2CirclePictureBox2)
         Me.mainPanel.Controls.Add(Me.ShadowPanel1)
-        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal
         Me.mainPanel.Location = New System.Drawing.Point(0, 0)
         Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(1145, 625)
+        Me.mainPanel.Size = New System.Drawing.Size(1145, 562)
         Me.mainPanel.TabIndex = 3
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(958, 28)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(117, 112)
+        Me.Guna2CirclePictureBox1.TabIndex = 19
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'panelhome
         '
@@ -211,7 +204,7 @@ Partial Class dashboard
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelhome.Location = New System.Drawing.Point(202, 28)
         Me.panelhome.Name = "panelhome"
-        Me.panelhome.Size = New System.Drawing.Size(689, 594)
+        Me.panelhome.Size = New System.Drawing.Size(715, 531)
         Me.panelhome.TabIndex = 0
         '
         'Guna2PictureBox1
@@ -227,26 +220,25 @@ Partial Class dashboard
         Me.Guna2PictureBox1.TabIndex = 18
         Me.Guna2PictureBox1.TabStop = False
         '
-        'dashboard
+        'employeeDash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1145, 625)
+        Me.ClientSize = New System.Drawing.Size(1145, 641)
         Me.Controls.Add(Me.mainPanel)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "dashboard"
+        Me.Name = "employeeDash"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form4"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ShadowPanel1.ResumeLayout(False)
-        CType(Me.Guna2CirclePictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.mainPanel.ResumeLayout(False)
-        Me.mainPanel.PerformLayout()
+        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -267,30 +259,23 @@ Partial Class dashboard
     End Sub
 
 
-
-
-
-    Private Sub Guna2CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles Guna2CirclePictureBox2.Click
-
-    End Sub
-
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
         Me.Hide()
-        Home.Show()
+        home.Show()
     End Sub
 
     Friend WithEvents mainPanel As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ShadowPanel5 As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-    Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents profile As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents home As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents panelhome As Panel
+    Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
 End Class

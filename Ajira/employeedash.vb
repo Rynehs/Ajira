@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
-Public Class dashboard
+Public Class employeeDash
     Sub Childform(ByVal panel As Form)
         panelhome.Controls.Clear()
         panel.TopLevel = False
@@ -8,7 +8,7 @@ Public Class dashboard
         panel.Show()
 
     End Sub
-    Private Sub BtnUpload_Click(sender As Object, e As EventArgs) Handles Guna2CirclePictureBox2.Click
+    Private Sub BtnUpload_Click(sender As Object, e As EventArgs)
         Dim openFileDialog As New OpenFileDialog With {
             .Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
         }
@@ -43,7 +43,7 @@ Public Class dashboard
                     If reader.Read() Then
                         Dim imageBytes As Byte() = CType(reader("image_data"), Byte())
                         Using ms As New MemoryStream(imageBytes)
-                            Guna2CirclePictureBox2.Image = Image.FromStream(ms)
+                            Guna2CirclePictureBox1.Image = Image.FromStream(ms)
                         End Using
                     End If
                 End Using
@@ -51,11 +51,16 @@ Public Class dashboard
         End Using
     End Sub
 
-    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
-        Childform(Updatedetails)
+    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles profile.Click
+        Childform(Frmemployeedetails)
     End Sub
 
-    Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles profile.Click
 
+
+    Private Sub Guna2CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2CirclePictureBox1.Click
+        Dim pop As New OpenFileDialog
+        If pop.ShowDialog <> Windows.Forms.DialogResult.Cancel Then
+            Guna2CirclePictureBox1.Image = Image.FromFile(pop.FileName)
+        End If
     End Sub
 End Class

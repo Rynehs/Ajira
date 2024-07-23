@@ -41,7 +41,9 @@ Partial Class Home
         Me.txtunamelogin = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtpasslogin = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.pn_registration = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.pn_registrationemployer = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.rdoEmployee = New System.Windows.Forms.RadioButton()
+        Me.rdoEmployer = New System.Windows.Forms.RadioButton()
         Me.txtfirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtsecondname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btncreateaccButton = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -51,9 +53,11 @@ Partial Class Home
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.radioEmployer = New System.Windows.Forms.RadioButton()
+        Me.radioEmployee = New System.Windows.Forms.RadioButton()
         Me.Guna2Panel1.SuspendLayout()
         Me.pn_login.SuspendLayout()
-        Me.pn_registration.SuspendLayout()
+        Me.pn_registrationemployer.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -188,6 +192,8 @@ Partial Class Home
         'pn_login
         '
         Me.pn_login.BackColor = System.Drawing.Color.Transparent
+        Me.pn_login.Controls.Add(Me.radioEmployee)
+        Me.pn_login.Controls.Add(Me.radioEmployer)
         Me.pn_login.Controls.Add(Me.Guna2GradientButton1)
         Me.pn_login.Controls.Add(Me.txtunamelogin)
         Me.pn_login.Controls.Add(Me.passwordreset)
@@ -198,13 +204,13 @@ Partial Class Home
         Me.pn_login.Controls.Add(Me.ToggleSwitch1)
         Me.Guna2Transition1.SetDecoration(Me.pn_login, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.pn_login.FillColor = System.Drawing.Color.White
-        Me.pn_login.Location = New System.Drawing.Point(498, 87)
+        Me.pn_login.Location = New System.Drawing.Point(211, 79)
         Me.pn_login.Name = "pn_login"
         Me.pn_login.ShadowColor = System.Drawing.Color.Green
         Me.pn_login.ShadowDepth = 150
         Me.pn_login.ShadowShift = 8
         Me.pn_login.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.pn_login.Size = New System.Drawing.Size(301, 414)
+        Me.pn_login.Size = New System.Drawing.Size(310, 428)
         Me.pn_login.TabIndex = 17
         '
         'txtunamelogin
@@ -279,30 +285,56 @@ Partial Class Home
         Me.Guna2GradientButton2.TabIndex = 13
         Me.Guna2GradientButton2.Text = "Create Account"
         '
-        'pn_registration
+        'pn_registrationemployer
         '
-        Me.pn_registration.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.pn_registrationemployer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pn_registration.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.pn_registration.BackColor = System.Drawing.Color.Transparent
-        Me.pn_registration.Controls.Add(Me.txtfirstname)
-        Me.pn_registration.Controls.Add(Me.txtsecondname)
-        Me.pn_registration.Controls.Add(Me.btncreateaccButton)
-        Me.pn_registration.Controls.Add(Me.txtuname)
-        Me.pn_registration.Controls.Add(Me.Label4)
-        Me.pn_registration.Controls.Add(Me.txtpass)
-        Me.pn_registration.Controls.Add(Me.Label6)
-        Me.Guna2Transition1.SetDecoration(Me.pn_registration, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.pn_registration.FillColor = System.Drawing.Color.White
-        Me.pn_registration.Location = New System.Drawing.Point(155, 87)
-        Me.pn_registration.Name = "pn_registration"
-        Me.pn_registration.ShadowColor = System.Drawing.Color.Green
-        Me.pn_registration.ShadowDepth = 150
-        Me.pn_registration.ShadowShift = 8
-        Me.pn_registration.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.pn_registration.Size = New System.Drawing.Size(304, 414)
-        Me.pn_registration.TabIndex = 18
+        Me.pn_registrationemployer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.pn_registrationemployer.BackColor = System.Drawing.Color.Transparent
+        Me.pn_registrationemployer.Controls.Add(Me.rdoEmployee)
+        Me.pn_registrationemployer.Controls.Add(Me.rdoEmployer)
+        Me.pn_registrationemployer.Controls.Add(Me.txtfirstname)
+        Me.pn_registrationemployer.Controls.Add(Me.txtsecondname)
+        Me.pn_registrationemployer.Controls.Add(Me.btncreateaccButton)
+        Me.pn_registrationemployer.Controls.Add(Me.txtuname)
+        Me.pn_registrationemployer.Controls.Add(Me.Label4)
+        Me.pn_registrationemployer.Controls.Add(Me.txtpass)
+        Me.pn_registrationemployer.Controls.Add(Me.Label6)
+        Me.Guna2Transition1.SetDecoration(Me.pn_registrationemployer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.pn_registrationemployer.FillColor = System.Drawing.Color.White
+        Me.pn_registrationemployer.Location = New System.Drawing.Point(498, 79)
+        Me.pn_registrationemployer.Name = "pn_registrationemployer"
+        Me.pn_registrationemployer.ShadowColor = System.Drawing.Color.Green
+        Me.pn_registrationemployer.ShadowDepth = 150
+        Me.pn_registrationemployer.ShadowShift = 8
+        Me.pn_registrationemployer.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
+        Me.pn_registrationemployer.Size = New System.Drawing.Size(310, 428)
+        Me.pn_registrationemployer.TabIndex = 18
+        '
+        'rdoEmployee
+        '
+        Me.rdoEmployee.AutoSize = True
+        Me.Guna2Transition1.SetDecoration(Me.rdoEmployee, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.rdoEmployee.Location = New System.Drawing.Point(142, 291)
+        Me.rdoEmployee.Name = "rdoEmployee"
+        Me.rdoEmployee.Size = New System.Drawing.Size(71, 17)
+        Me.rdoEmployee.TabIndex = 18
+        Me.rdoEmployee.TabStop = True
+        Me.rdoEmployee.Text = "Employee"
+        Me.rdoEmployee.UseVisualStyleBackColor = True
+        '
+        'rdoEmployer
+        '
+        Me.rdoEmployer.AutoSize = True
+        Me.Guna2Transition1.SetDecoration(Me.rdoEmployer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.rdoEmployer.Location = New System.Drawing.Point(44, 291)
+        Me.rdoEmployer.Name = "rdoEmployer"
+        Me.rdoEmployer.Size = New System.Drawing.Size(68, 17)
+        Me.rdoEmployer.TabIndex = 17
+        Me.rdoEmployer.TabStop = True
+        Me.rdoEmployer.Text = "Employer"
+        Me.rdoEmployer.UseVisualStyleBackColor = True
         '
         'txtfirstname
         '
@@ -319,7 +351,7 @@ Partial Class Home
         Me.txtfirstname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtfirstname.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtfirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtfirstname.Location = New System.Drawing.Point(29, 97)
+        Me.txtfirstname.Location = New System.Drawing.Point(29, 73)
         Me.txtfirstname.Name = "txtfirstname"
         Me.txtfirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtfirstname.PlaceholderText = "First name"
@@ -342,7 +374,7 @@ Partial Class Home
         Me.txtsecondname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtsecondname.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtsecondname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtsecondname.Location = New System.Drawing.Point(29, 149)
+        Me.txtsecondname.Location = New System.Drawing.Point(29, 126)
         Me.txtsecondname.Name = "txtsecondname"
         Me.txtsecondname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtsecondname.PlaceholderText = "Second name"
@@ -387,7 +419,7 @@ Partial Class Home
         Me.txtuname.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtuname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtuname.IconLeft = Global.Ajira.My.Resources.Resources.avatar
-        Me.txtuname.Location = New System.Drawing.Point(29, 201)
+        Me.txtuname.Location = New System.Drawing.Point(29, 181)
         Me.txtuname.Name = "txtuname"
         Me.txtuname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtuname.PlaceholderText = "Username"
@@ -402,7 +434,7 @@ Partial Class Home
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Guna2Transition1.SetDecoration(Me.Label4, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Symbol", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(125, 379)
+        Me.Label4.Location = New System.Drawing.Point(128, 370)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 20)
         Me.Label4.TabIndex = 12
@@ -424,7 +456,7 @@ Partial Class Home
         Me.txtpass.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtpass.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtpass.IconLeft = Global.Ajira.My.Resources.Resources.padlock
-        Me.txtpass.Location = New System.Drawing.Point(29, 253)
+        Me.txtpass.Location = New System.Drawing.Point(29, 235)
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtpass.PlaceholderText = "Password"
@@ -440,9 +472,9 @@ Partial Class Home
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(92, 36)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(94, 25)
+        Me.Label6.Size = New System.Drawing.Size(88, 25)
         Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Register "
+        Me.Label6.Text = "Register"
         '
         'Guna2Transition1
         '
@@ -476,27 +508,51 @@ Partial Class Home
         Me.Guna2PictureBox1.TabIndex = 4
         Me.Guna2PictureBox1.TabStop = False
         '
-        'home
+        'radioEmployer
+        '
+        Me.radioEmployer.AutoSize = True
+        Me.Guna2Transition1.SetDecoration(Me.radioEmployer, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.radioEmployer.Location = New System.Drawing.Point(39, 240)
+        Me.radioEmployer.Name = "radioEmployer"
+        Me.radioEmployer.Size = New System.Drawing.Size(68, 17)
+        Me.radioEmployer.TabIndex = 19
+        Me.radioEmployer.TabStop = True
+        Me.radioEmployer.Text = "Employer"
+        Me.radioEmployer.UseVisualStyleBackColor = True
+        '
+        'radioEmployee
+        '
+        Me.radioEmployee.AutoSize = True
+        Me.Guna2Transition1.SetDecoration(Me.radioEmployee, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.radioEmployee.Location = New System.Drawing.Point(133, 240)
+        Me.radioEmployee.Name = "radioEmployee"
+        Me.radioEmployee.Size = New System.Drawing.Size(71, 17)
+        Me.radioEmployee.TabIndex = 19
+        Me.radioEmployee.TabStop = True
+        Me.radioEmployee.Text = "Employee"
+        Me.radioEmployee.UseVisualStyleBackColor = True
+        '
+        'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(922, 606)
-        Me.Controls.Add(Me.pn_registration)
         Me.Controls.Add(Me.pn_login)
+        Me.Controls.Add(Me.pn_registrationemployer)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2Transition1.SetDecoration(Me, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "home"
+        Me.Name = "Home"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.pn_login.ResumeLayout(False)
         Me.pn_login.PerformLayout()
-        Me.pn_registration.ResumeLayout(False)
-        Me.pn_registration.PerformLayout()
+        Me.pn_registrationemployer.ResumeLayout(False)
+        Me.pn_registrationemployer.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -519,7 +575,7 @@ Partial Class Home
     Friend WithEvents Guna2AnimateWindow1 As Guna.UI2.WinForms.Guna2AnimateWindow
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents pn_login As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents pn_registration As Guna.UI2.WinForms.Guna2ShadowPanel
+    Friend WithEvents pn_registrationemployer As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents btncreateaccButton As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents txtuname As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
@@ -528,4 +584,8 @@ Partial Class Home
     Friend WithEvents txtfirstname As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtsecondname As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Transition1 As Guna.UI2.WinForms.Guna2Transition
+    Friend WithEvents rdoEmployee As RadioButton
+    Friend WithEvents rdoEmployer As RadioButton
+    Friend WithEvents radioEmployee As RadioButton
+    Friend WithEvents radioEmployer As RadioButton
 End Class
