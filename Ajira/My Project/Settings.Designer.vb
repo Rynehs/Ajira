@@ -63,6 +63,36 @@ Namespace My
                 Return CType(Me("connString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute(" My.Settings.SavedUsername = txtunamelogin.Text")>  _
+        Public ReadOnly Property Setting() As String
+            Get
+                Return CType(Me("Setting"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("My.Settings.SavedPassword = txtpasslogin.Text")>  _
+        Public ReadOnly Property Setting1() As String
+            Get
+                Return CType(Me("Setting1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute(" My.Settings.Save()")>  _
+        Public ReadOnly Property Setting2() As String
+            Get
+                Return CType(Me("Setting2"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

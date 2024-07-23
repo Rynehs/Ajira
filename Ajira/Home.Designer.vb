@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class home
+Partial Class Home
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,14 +23,14 @@ Partial Class home
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(home))
+        Dim Animation1 As Guna.UI2.AnimatorNS.Animation = New Guna.UI2.AnimatorNS.Animation()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
-        Me.Guna2ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.ToggleSwitch1 = New Guna.UI2.WinForms.Guna2ToggleSwitch()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.passwordreset = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2AnimateWindow1 = New Guna.UI2.WinForms.Guna2AnimateWindow(Me.components)
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
@@ -38,6 +38,9 @@ Partial Class home
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.pn_login = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.txtunamelogin = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtpasslogin = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.pn_registration = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.txtfirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtsecondname = New Guna.UI2.WinForms.Guna2TextBox()
@@ -46,9 +49,6 @@ Partial Class home
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtpass = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtunamelogin = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtpasslogin = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2Transition1 = New Guna.UI2.WinForms.Guna2Transition()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
@@ -66,21 +66,21 @@ Partial Class home
         '
         Me.Guna2ShadowForm1.TargetForm = Me
         '
-        'Guna2ToggleSwitch1
+        'ToggleSwitch1
         '
-        Me.Guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2Transition1.SetDecoration(Me.Guna2ToggleSwitch1, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2ToggleSwitch1.Location = New System.Drawing.Point(29, 213)
-        Me.Guna2ToggleSwitch1.Name = "Guna2ToggleSwitch1"
-        Me.Guna2ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
-        Me.Guna2ToggleSwitch1.TabIndex = 7
-        Me.Guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
-        Me.Guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
+        Me.ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.Guna2Transition1.SetDecoration(Me.ToggleSwitch1, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.ToggleSwitch1.Location = New System.Drawing.Point(29, 213)
+        Me.ToggleSwitch1.Name = "ToggleSwitch1"
+        Me.ToggleSwitch1.Size = New System.Drawing.Size(35, 20)
+        Me.ToggleSwitch1.TabIndex = 7
+        Me.ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White
         '
         'Label1
         '
@@ -115,18 +115,18 @@ Partial Class home
         Me.Guna2GradientButton1.TabIndex = 11
         Me.Guna2GradientButton1.Text = "LOGIN"
         '
-        'Label2
+        'passwordreset
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Transition1.SetDecoration(Me.Label2, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(71, 322)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(170, 13)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = " Forgot Username or Password?"
+        Me.passwordreset.AutoSize = True
+        Me.passwordreset.BackColor = System.Drawing.Color.Transparent
+        Me.passwordreset.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Transition1.SetDecoration(Me.passwordreset, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.passwordreset.Font = New System.Drawing.Font("Segoe UI Symbol", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.passwordreset.Location = New System.Drawing.Point(71, 322)
+        Me.passwordreset.Name = "passwordreset"
+        Me.passwordreset.Size = New System.Drawing.Size(170, 13)
+        Me.passwordreset.TabIndex = 12
+        Me.passwordreset.Text = " Forgot Username or Password?"
         '
         'Label3
         '
@@ -190,12 +190,12 @@ Partial Class home
         Me.pn_login.BackColor = System.Drawing.Color.Transparent
         Me.pn_login.Controls.Add(Me.Guna2GradientButton1)
         Me.pn_login.Controls.Add(Me.txtunamelogin)
-        Me.pn_login.Controls.Add(Me.Label2)
+        Me.pn_login.Controls.Add(Me.passwordreset)
         Me.pn_login.Controls.Add(Me.txtpasslogin)
         Me.pn_login.Controls.Add(Me.Label1)
         Me.pn_login.Controls.Add(Me.Label3)
         Me.pn_login.Controls.Add(Me.Guna2GradientButton2)
-        Me.pn_login.Controls.Add(Me.Guna2ToggleSwitch1)
+        Me.pn_login.Controls.Add(Me.ToggleSwitch1)
         Me.Guna2Transition1.SetDecoration(Me.pn_login, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.pn_login.FillColor = System.Drawing.Color.White
         Me.pn_login.Location = New System.Drawing.Point(498, 87)
@@ -206,6 +206,78 @@ Partial Class home
         Me.pn_login.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
         Me.pn_login.Size = New System.Drawing.Size(301, 414)
         Me.pn_login.TabIndex = 17
+        '
+        'txtunamelogin
+        '
+        Me.txtunamelogin.Animated = True
+        Me.txtunamelogin.BorderRadius = 8
+        Me.txtunamelogin.BorderThickness = 2
+        Me.txtunamelogin.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2Transition1.SetDecoration(Me.txtunamelogin, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.txtunamelogin.DefaultText = ""
+        Me.txtunamelogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtunamelogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtunamelogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtunamelogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtunamelogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtunamelogin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtunamelogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtunamelogin.IconLeft = Global.Ajira.My.Resources.Resources.avatar
+        Me.txtunamelogin.Location = New System.Drawing.Point(29, 97)
+        Me.txtunamelogin.Name = "txtunamelogin"
+        Me.txtunamelogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtunamelogin.PlaceholderText = "Username"
+        Me.txtunamelogin.SelectedText = ""
+        Me.txtunamelogin.Size = New System.Drawing.Size(243, 46)
+        Me.txtunamelogin.TabIndex = 5
+        '
+        'txtpasslogin
+        '
+        Me.txtpasslogin.Animated = True
+        Me.txtpasslogin.BorderRadius = 8
+        Me.txtpasslogin.BorderThickness = 2
+        Me.txtpasslogin.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Guna2Transition1.SetDecoration(Me.txtpasslogin, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.txtpasslogin.DefaultText = ""
+        Me.txtpasslogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtpasslogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtpasslogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtpasslogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtpasslogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtpasslogin.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.txtpasslogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtpasslogin.IconLeft = Global.Ajira.My.Resources.Resources.padlock
+        Me.txtpasslogin.Location = New System.Drawing.Point(29, 149)
+        Me.txtpasslogin.Name = "txtpasslogin"
+        Me.txtpasslogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtpasslogin.PlaceholderText = "Password"
+        Me.txtpasslogin.SelectedText = ""
+        Me.txtpasslogin.Size = New System.Drawing.Size(243, 46)
+        Me.txtpasslogin.TabIndex = 6
+        '
+        'Guna2GradientButton2
+        '
+        Me.Guna2GradientButton2.Animated = True
+        Me.Guna2GradientButton2.AutoRoundedCorners = True
+        Me.Guna2GradientButton2.BorderRadius = 21
+        Me.Guna2Transition1.SetDecoration(Me.Guna2GradientButton2, Guna.UI2.AnimatorNS.DecorationType.None)
+        Me.Guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2GradientButton2.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2GradientButton2.FillColor2 = System.Drawing.Color.Transparent
+        Me.Guna2GradientButton2.Font = New System.Drawing.Font("Segoe UI Historic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GradientButton2.ForeColor = System.Drawing.Color.DimGray
+        Me.Guna2GradientButton2.Image = Global.Ajira.My.Resources.Resources.right_arrow_6
+        Me.Guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Guna2GradientButton2.ImageSize = New System.Drawing.Size(18, 18)
+        Me.Guna2GradientButton2.Location = New System.Drawing.Point(48, 354)
+        Me.Guna2GradientButton2.Name = "Guna2GradientButton2"
+        Me.Guna2GradientButton2.Size = New System.Drawing.Size(212, 45)
+        Me.Guna2GradientButton2.TabIndex = 13
+        Me.Guna2GradientButton2.Text = "Create Account"
         '
         'pn_registration
         '
@@ -223,7 +295,7 @@ Partial Class home
         Me.pn_registration.Controls.Add(Me.Label6)
         Me.Guna2Transition1.SetDecoration(Me.pn_registration, Guna.UI2.AnimatorNS.DecorationType.None)
         Me.pn_registration.FillColor = System.Drawing.Color.White
-        Me.pn_registration.Location = New System.Drawing.Point(495, 87)
+        Me.pn_registration.Location = New System.Drawing.Point(155, 87)
         Me.pn_registration.Name = "pn_registration"
         Me.pn_registration.ShadowColor = System.Drawing.Color.Green
         Me.pn_registration.ShadowDepth = 150
@@ -372,97 +444,25 @@ Partial Class home
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Register "
         '
-        'txtunamelogin
-        '
-        Me.txtunamelogin.Animated = True
-        Me.txtunamelogin.BorderRadius = 8
-        Me.txtunamelogin.BorderThickness = 2
-        Me.txtunamelogin.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2Transition1.SetDecoration(Me.txtunamelogin, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.txtunamelogin.DefaultText = ""
-        Me.txtunamelogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtunamelogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtunamelogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtunamelogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtunamelogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtunamelogin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtunamelogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtunamelogin.IconLeft = Global.Ajira.My.Resources.Resources.avatar
-        Me.txtunamelogin.Location = New System.Drawing.Point(29, 97)
-        Me.txtunamelogin.Name = "txtunamelogin"
-        Me.txtunamelogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtunamelogin.PlaceholderText = "Username"
-        Me.txtunamelogin.SelectedText = ""
-        Me.txtunamelogin.Size = New System.Drawing.Size(243, 46)
-        Me.txtunamelogin.TabIndex = 5
-        '
-        'txtpasslogin
-        '
-        Me.txtpasslogin.Animated = True
-        Me.txtpasslogin.BorderRadius = 8
-        Me.txtpasslogin.BorderThickness = 2
-        Me.txtpasslogin.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2Transition1.SetDecoration(Me.txtpasslogin, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.txtpasslogin.DefaultText = ""
-        Me.txtpasslogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtpasslogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtpasslogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtpasslogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtpasslogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtpasslogin.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.txtpasslogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtpasslogin.IconLeft = Global.Ajira.My.Resources.Resources.padlock
-        Me.txtpasslogin.Location = New System.Drawing.Point(29, 149)
-        Me.txtpasslogin.Name = "txtpasslogin"
-        Me.txtpasslogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtpasslogin.PlaceholderText = "Password"
-        Me.txtpasslogin.SelectedText = ""
-        Me.txtpasslogin.Size = New System.Drawing.Size(243, 46)
-        Me.txtpasslogin.TabIndex = 6
-        '
-        'Guna2GradientButton2
-        '
-        Me.Guna2GradientButton2.Animated = True
-        Me.Guna2GradientButton2.AutoRoundedCorners = True
-        Me.Guna2GradientButton2.BorderRadius = 21
-        Me.Guna2Transition1.SetDecoration(Me.Guna2GradientButton2, Guna.UI2.AnimatorNS.DecorationType.None)
-        Me.Guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2GradientButton2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2GradientButton2.FillColor2 = System.Drawing.Color.Transparent
-        Me.Guna2GradientButton2.Font = New System.Drawing.Font("Segoe UI Historic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GradientButton2.ForeColor = System.Drawing.Color.DimGray
-        Me.Guna2GradientButton2.Image = Global.Ajira.My.Resources.Resources.right_arrow_6
-        Me.Guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.Guna2GradientButton2.ImageSize = New System.Drawing.Size(18, 18)
-        Me.Guna2GradientButton2.Location = New System.Drawing.Point(48, 354)
-        Me.Guna2GradientButton2.Name = "Guna2GradientButton2"
-        Me.Guna2GradientButton2.Size = New System.Drawing.Size(212, 45)
-        Me.Guna2GradientButton2.TabIndex = 13
-        Me.Guna2GradientButton2.Text = "Create Account"
-        '
         'Guna2Transition1
         '
         Me.Guna2Transition1.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.Guna2Transition1.DefaultAnimation = Animation2
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0!
+        Animation1.TransparencyCoeff = 0!
+        Me.Guna2Transition1.DefaultAnimation = Animation1
         '
         'Guna2PictureBox1
         '
@@ -506,10 +506,10 @@ Partial Class home
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
     Friend WithEvents Label1 As Label
-    Friend WithEvents Guna2ToggleSwitch1 As Guna.UI2.WinForms.Guna2ToggleSwitch
+    Friend WithEvents ToggleSwitch1 As Guna.UI2.WinForms.Guna2ToggleSwitch
     Friend WithEvents txtpasslogin As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtunamelogin As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents passwordreset As Label
     Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox

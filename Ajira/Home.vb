@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class home
+Imports System.IO
+Public Class Home
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
         pn_registration.Visible = True
         Guna2Transition1.HideSync(pn_registration)
@@ -8,7 +9,6 @@ Public Class home
         pn_registration.Visible = True
         Guna2Transition1.ShowSync(pn_registration)
     End Sub
-
 
     Private Sub BtncreateaccButton_Click(sender As Object, e As EventArgs) Handles btncreateaccButton.Click
         ' Check if any of the textboxes are blank
@@ -116,7 +116,7 @@ Public Class home
                         Dim dashboard As New Dashboard
                         dashboard.Show()
                         Me.Hide() ' Hide the login form
-
+                        MessageBox.Show("Update Profle", "Update Profile to Continue")
                     ElseIf count > 1 Then
                         MessageBox.Show("Duplicate usernames found, please contact administrator.", "Login Error")
                     Else
@@ -131,4 +131,13 @@ Public Class home
         End Using
     End Sub
 
+    Private Sub Guna2ToggleSwitch1_CheckedChanged(sender As Object, e As EventArgs) Handles ToggleSwitch1.CheckedChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles passwordreset.Click
+        Me.Hide()
+        passwordreset.Show()
+    End Sub
 End Class
+
