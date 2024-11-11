@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,11 +69,8 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bunifu.Licensing.6.0.2\lib\net472\Bunifu.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bunifu.UI.WinForms.7.0.0\lib\net472\Bunifu.UI.WinForms.dll</HintPath>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
@@ -66,8 +78,15 @@
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -135,39 +154,113 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.vb" />
-    <Compile Include="employerdash.Designer.vb">
+    <Compile Include="employee\employeehome.Designer.vb">
+      <DependentUpon>employeehome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\employeehome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\frmjobs.Designer.vb">
+      <DependentUpon>frmjobs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\frmjobs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\frmsettings.Designer.vb">
+      <DependentUpon>frmsettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\frmsettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\jobmessage.Designer.vb">
+      <DependentUpon>jobmessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employee\jobmessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employer\employerdash.Designer.vb">
       <DependentUpon>employerdash.vb</DependentUpon>
     </Compile>
-    <Compile Include="employerdash.vb">
+    <Compile Include="employer\employerdash.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="findaccount.Designer.vb">
-      <DependentUpon>findaccount.vb</DependentUpon>
+    <Compile Include="employer\employerdetailsupdate.Designer.vb">
+      <DependentUpon>employerdetailsupdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="findaccount.vb">
+    <Compile Include="employer\employerdetailsupdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
+    <Compile Include="employer\EmployerSettingForm.Designer.vb">
+      <DependentUpon>EmployerSettingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employer\EmployerSettingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employer\frmpopup.Designer.vb">
+      <DependentUpon>frmpopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employer\frmpopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employer\Homeemployer.Designer.vb">
+      <DependentUpon>Homeemployer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employer\Homeemployer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\jobspost.Designer.vb">
+      <DependentUpon>jobspost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\jobspost.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employer\Messaging.Designer.vb">
+      <DependentUpon>Messaging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employer\Messaging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employer\workers.Designer.vb">
+      <DependentUpon>workers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="employer\workers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Messages\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Messages\frmMessageSelection.Designer.vb">
+      <DependentUpon>frmMessageSelection.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb" />
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="Messages\frmMessageSelection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employeeupdatedetails.Designer.vb">
+    <Compile Include="Messages\frmReply.Designer.vb">
+      <DependentUpon>frmReply.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\frmReply.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages\frmReview.Designer.vb">
+      <DependentUpon>frmReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\frmReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\Database.vb" />
+    <Compile Include="OTPRequestAndVerificationForm.Designer.vb">
+      <DependentUpon>OTPRequestAndVerificationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OTPRequestAndVerificationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee\employeeupdatedetails.Designer.vb">
       <DependentUpon>employeeupdatedetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="employeeupdatedetails.vb">
+    <Compile Include="employee\employeeupdatedetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.vb">
@@ -177,10 +270,10 @@
       <DependentUpon>Home.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employeedash.Designer.vb">
+    <Compile Include="employee\employeedash.Designer.vb">
       <DependentUpon>employeedash.vb</DependentUpon>
     </Compile>
-    <Compile Include="employeedash.vb">
+    <Compile Include="employee\employeedash.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -200,51 +293,90 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="passwordreset.Designer.vb">
+    <Compile Include="modules\passwordreset.Designer.vb">
       <DependentUpon>passwordreset.vb</DependentUpon>
     </Compile>
-    <Compile Include="passwordreset.vb" />
-    <Compile Include="Security.vb" />
-    <Compile Include="employerdetailsupdate.Designer.vb">
-      <DependentUpon>employerdetailsupdate.vb</DependentUpon>
+    <Compile Include="modules\passwordreset.vb" />
+    <Compile Include="modules\Security.vb" />
+    <Compile Include="ResetPasswordForm.Designer.vb">
+      <DependentUpon>ResetPasswordForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="employerdetailsupdate.vb">
+    <Compile Include="ResetPasswordForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="findaccount.resx">
-      <DependentUpon>findaccount.vb</DependentUpon>
+    <EmbeddedResource Include="employee\employeehome.resx">
+      <DependentUpon>employeehome.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="employee\frmjobs.resx">
+      <DependentUpon>frmjobs.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="employee\frmsettings.resx">
+      <DependentUpon>frmsettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="employee\jobmessage.resx">
+      <DependentUpon>jobmessage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="employeeupdatedetails.resx">
+    <EmbeddedResource Include="employer\employerdash.resx">
+      <DependentUpon>employerdash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\employerdetailsupdate.resx">
+      <DependentUpon>employerdetailsupdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\EmployerSettingForm.resx">
+      <DependentUpon>EmployerSettingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\frmpopup.resx">
+      <DependentUpon>frmpopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\Homeemployer.resx">
+      <DependentUpon>Homeemployer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\jobspost.resx">
+      <DependentUpon>jobspost.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\Messaging.resx">
+      <DependentUpon>Messaging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employer\workers.resx">
+      <DependentUpon>workers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPRequestAndVerificationForm.resx">
+      <DependentUpon>OTPRequestAndVerificationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee\employeeupdatedetails.resx">
       <DependentUpon>employeeupdatedetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="employeedash.resx">
+    <EmbeddedResource Include="employee\employeedash.resx">
       <DependentUpon>employeedash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\frmMessageSelection.resx">
+      <DependentUpon>frmMessageSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\frmReply.resx">
+      <DependentUpon>frmReply.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\frmReview.resx">
+      <DependentUpon>frmReview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="passwordreset.resx">
+    <EmbeddedResource Include="modules\passwordreset.resx">
       <DependentUpon>passwordreset.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="employerdetailsupdate.resx">
-      <DependentUpon>employerdetailsupdate.vb</DependentUpon>
+    <EmbeddedResource Include="ResetPasswordForm.resx">
+      <DependentUpon>ResetPasswordForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +442,61 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ajiraeoo.ico" />
+    <None Include="Resources\instagram.png" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\whatsapp.png" />
+    <None Include="Resources\posting1.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\logout %281%291.png" />
+    <None Include="Resources\menu-bar.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\bell1.png" />
+    <None Include="Resources\bell.png" />
+    <None Include="Resources\posting.png" />
+    <None Include="Resources\eye %281%29.png" />
+    <None Include="Resources\wired-outline-69-eye1.gif" />
+    <None Include="Resources\eye1.png" />
+    <None Include="Resources\blue-031.png" />
+    <None Include="Resources\home2.png" />
+    <None Include="Resources\multiple-users-silhouette1.png" />
+    <None Include="Resources\user2.png" />
+    <None Include="Resources\home1.png" />
+    <None Include="Resources\wired-outline-19-magnifier-zoom-search.gif" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\messege.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\wired-outline-69-eye.gif" />
+    <None Include="Resources\padlock %281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\wired-outline-21-avatar.gif" />
+    <None Include="Resources\lf.gif" />
+    <None Include="Resources\blue-03.png" />
+    <None Include="Resources\blue-02.png" />
+    <None Include="Resources\blue-01.png" />
+    <None Include="Resources\export.gif" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\padlock1.png" />
+    <None Include="Resources\359-users.png" />
+    <None Include="Resources\335-home.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\icons8-eye-52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

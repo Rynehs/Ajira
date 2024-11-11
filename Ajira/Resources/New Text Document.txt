@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajira Platform - FAQ</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0094ba; /* Ajira teal color */
+            margin-bottom: 40px;
+        }
+
+        .faq-header {
+            background-color: #0094ba;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .faq-header:hover {
+            background-color: #007a96; /* Darker teal on hover */
+        }
+
+        .faq-content {
+            background-color: #f9f9f9;
+            padding: 15px;
+            display: none;
+            border-left: 5px solid #0094ba;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .faq-content p {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Styling for search input */
+        #faqSearch {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 600px) {
+            .faq-header {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Frequently Asked Questions - Ajira Platform</h1>
+
+        <!-- Search bar for filtering FAQ questions -->
+        <input type="text" id="faqSearch" placeholder="Search FAQs..." />
+
+        <!-- FAQ Section 1 -->
+        <button class="faq-header">What is Ajira?</button>
+        <div class="faq-content">
+            <p>Ajira is an employment platform that connects casual workers with employers. We aim to provide opportunities for workers to find short-term jobs and employers to quickly find reliable help.</p>
+        </div>
+
+        <!-- FAQ Section 2 -->
+        <button class="faq-header">How do I register as a worker or employer?</button>
+        <div class="faq-content">
+            <p>You can register on the Ajira platform by clicking on the "Register" button on the homepage. Follow the instructions to sign up either as a worker or employer, filling in the required details.</p>
+        </div>
+
+        <!-- FAQ Section 3 -->
+        <button class="faq-header">How do I post a job?</button>
+        <div class="faq-content">
+            <p>To post a job, log in to your employer account, go to the "Post a Job" section, and fill out the job details such as job title, description, location, and timeframe. Once posted, the job will be visible to workers on the platform.</p>
+        </div>
+
+        <!-- FAQ Section 4 -->
+        <button class="faq-header">How do I contact a worker or employer?</button>
+        <div class="faq-content">
+            <p>To contact a worker or employer, navigate to the job listing page or worker profile, and use the provided contact button. This will open a message form where you can send a message through the platform.</p>
+        </div>
+
+        <!-- FAQ Section 5 -->
+        <button class="faq-header">How is payment handled on the platform?</button>
+        <div class="faq-content">
+            <p>Payment is handled directly between workers and employers. Ajira currently facilitates secure communication and job postings, but it does not process payments. We recommend using safe and reliable payment methods.</p>
+        </div>
+
+        <!-- Add more FAQ sections as needed -->
+    </div>
+
+    <script>
+        // JavaScript for toggling FAQ visibility
+        var faqHeaders = document.querySelectorAll('.faq-header');
+
+        faqHeaders.forEach(function(header) {
+            header.addEventListener('click', function() {
+                var content = this.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+
+        // Search functionality
+        var searchInput = document.getElementById('faqSearch');
+        searchInput.addEventListener('keyup', function() {
+            var filter = searchInput.value.toLowerCase();
+            var faqSections = document.querySelectorAll('.faq-section');
+            var faqHeaders = document.querySelectorAll('.faq-header');
+            
+            faqHeaders.forEach(function(header) {
+                var question = header.textContent.toLowerCase();
+                var faqContent = header.nextElementSibling;
+                
+                if (question.indexOf(filter) > -1) {
+                    header.style.display = 'block';
+                    faqContent.style.display = 'none'; // Initially hide all content
+                } else {
+                    header.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

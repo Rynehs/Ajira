@@ -93,6 +93,42 @@ Namespace My
                 Return CType(Me("Setting"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property SavedUsername() As String
+            Get
+                Return CType(Me("SavedUsername"),String)
+            End Get
+            Set
+                Me("SavedUsername") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property SavedPassword() As String
+            Get
+                Return CType(Me("SavedPassword"),String)
+            End Get
+            Set
+                Me("SavedPassword") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property RememberMe() As Boolean
+            Get
+                Return CType(Me("RememberMe"),Boolean)
+            End Get
+            Set
+                Me("RememberMe") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
